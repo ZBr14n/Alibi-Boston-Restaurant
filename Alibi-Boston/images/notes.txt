@@ -1,0 +1,249 @@
+.footer-container{
+  padding-top: .5em;
+  padding-bottom: .5em;
+
+  
+}
+
+.footer-container .social-links{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  
+  /* padding: 1.27rem 1.27rem; */
+
+  background-color: #827274;
+
+  border-width: 100%;
+
+  font-size: 20px;
+  text-align: center;
+
+  
+}
+.social-links a{
+  /* text-decoration: none; */
+  text-decoration: none !important;
+  padding: 1.68rem 1.68rem;
+}
+.social-links a:hover{
+  color: pink;
+}
+
+.social-links .icons{
+  color: white;
+}
+---------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /*desktop gallery */
+  .insta-gallery{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  .insta-gallery .insta-item{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    flex: 1 1 0;    
+    /* height: auto;  */
+
+    /* overflow keeps the zoom within its own div without expanding it outside of it */
+    overflow: hidden;
+
+  }
+
+  /*  force line break for every 7th images (source: https://stackoverflow.com/questions/29732575/how-to-specify-line-breaks-in-a-multi-line-flexbox-layout )*/
+  .insta-item:nth-child(7n) {
+    page-break-after: always;    
+  }.insta-item img
+
+  .insta-item img{
+    width: 100%; 
+    height: auto; 
+    object-fit: cover;
+
+    transition: all 0.3s;
+  }
+  .insta-item:hover img{
+    transform: scale(1.1);
+  }
+
+
+
+
+
+
+
+
+-----------------------------------------------------
+
+  .insta-container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .insta-container a{
+    position: relative;
+    z-index: 0;
+    display: block;
+    overflow: hidden;
+    width: 50%;
+  }
+  .insta-item{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+  .sr-only{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;    
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---------------------------------------
+
+  <img src="https://scontent.cdninstagram.com/v/t51.2885-15/sh0.08/e35/s640x640/82164289_126490175535954_2757020930712883380_n.jpg?_nc_ht=scontent.cdninstagram.com&_nc_ohc=mKw1gn65T2QAX-Nbfqq&oh=036f9a8390989a702d10f233e58cd2cd&oe=5ECF05DB" />
+
+  <img src="https://scontent.cdninstagram.com/v/t51.2885-15/sh0.08/e35/s640x640/82164289_126490175535954_2757020930712883380_n.jpg?_nc_ht=scontent.cdninstagram.com&_nc_ohc=mKw1gn65T2QAX-Nbfqq&oh=036f9a8390989a702d10f233e58cd2cd&oe=5ECF05DB" />
+
+        
+        <div class="insta-item" style="background-image: url('https://scontent.cdninstagram.com/v/t51.2885-15/sh0.08/e35/s640x640/82164289_126490175535954_2757020930712883380_n.jpg?_nc_ht=scontent.cdninstagram.com&_nc_ohc=mKw1gn65T2QAX-Nbfqq&oh=036f9a8390989a702d10f233e58cd2cd&oe=5ECF05DB');"></div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        window.onscroll = function(){
+            logoViewPort.style.transition = '2s';
+            logoViewPort.style.width = '250px';
+            logoViewPort.style.height = '90px';            
+        } 
+
+
+
+        if($('.mariel-logo').scrollTop() == '0px'){
+    window.onscroll = function(){
+        logoViewPort.style.transition = '2s';
+        logoViewPort.style.width = '250px';
+        logoViewPort.style.height = '90px';            
+    }    
+}
+
+
+
+
+shrink:
+        logoViewPort.style.transition = '2s';
+        logoViewPort.style.width = '152px';
+        logoViewPort.style.height = '37px';  
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Initial state
+let scrollPos = 0;
+// adding scroll event
+window.addEventListener('scroll', function(){
+  // detects new state and compares it with the new one
+    if (logoViewPort.scrollTop == 0){
+        logoViewPort.style.width = '250px';
+        logoViewPort.style.height = '90px'; 
+
+    }         
+	else{
+        logoViewPort.style.width = '152px';
+        logoViewPort.style.height = '37px'; 
+    }
+    console.log(logoViewPort.scrollTop)
+	// saves the new position for iteration.
+	// scrollPos = (document.body.getBoundingClientRect()).top;
+});
+
+
+
+
+
+
+
+
+
+if (!window.scrollTo(0,0)) {
+    logoViewPort.style.width = '250px';
+    logoViewPort.style.height = '90px'; 
+}else{
+    logoViewPort.style.width = '152px';
+    logoViewPort.style.height = '37px'; 
+}  
